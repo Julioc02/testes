@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+			xmlns:th="http://www.thymeleaf.org"
+		>
+  <head>
+    <title>Livros</title>
+  </head>
+    <form action="/salvar" method="post">
+      <input type="text" name="numero" placeholder="Numero">
+       <input type="text" name="nome" placeholder="Nome">
+        <input type="date" name="recebeu" placeholder="Recebimento">
+         <input type="date" name="entrega" placeholder=Entrega">
+    </form>
+    
+    <table>
+      <tr>
+        <td>Numero</td>
+         <td>Nome</td>
+          <td>Recebimento</td>
+           <td>Entrega</td>
+      </tr>
+      <tr th:each="c : ${Aluno}">
+         <td th:text="${c.numero}"></td>		
+		 <td th:text="${c.nome}"></td>
+           <td th:text="${c.recebeu}"></td>
+            <td th:text="${c.entrega}"></td>
+      </tr>
+    </table>
+</html>
